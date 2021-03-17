@@ -4,28 +4,23 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 
+window.axios = require('axios');
 Vue.config.productionTip = false
 
 let provided = {
-  products: [
-    {name: "Peppers", description: "Just peppers", price: 2.99},
-    {name: "Milk", description: "White water", price: 2.99},
-    {name: "Water", description: "Transparent milk", price: 2.99},
-  ],
-  currency: {
-    code: "USD",
-    sign: "$",
-    name: "Dollars"
-  },
-  router: router
+    currency: {
+        code: "USD",
+        sign: "$",
+        name: "Dollars"
+    },
+    appAddress: "http://localhost:5000",
+    router: router
 }
 
 new Vue({
-  provide: provided,
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
+    provide: provided,
+    router,
+    store,
+    vuetify,
+    render: h => h(App)
 }).$mount('#app')
-
-export default router
