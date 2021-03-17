@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <ProductList :products="this.products" v-on:added-to-basket="showAlert()"></ProductList>
     <br><br>
     <v-slide-x-transition>
@@ -38,9 +37,10 @@ export default {
       EventBus.$emit(event, args)
     },
     showAlert() {
-      console.log("Alert")
-      this.alertVisible = true
-      setTimeout(() => this.alertVisible = false, 1150)
+      if (this.alertVisible === false) {
+        this.alertVisible = true
+        setTimeout(() => this.alertVisible = false, 1150)
+      }
     }
   }
 }
