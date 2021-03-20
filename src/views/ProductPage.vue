@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <ProductList :products="this.products" v-on:item-to-shopping-cart="showAlert()"></ProductList>
-    <br><br>
-  </div>
+  <ProductList
+      :red-button="redButton"
+      :blue-button="blueButton"
+      :green-button="greenButton"
+      :products="this.products">
+  </ProductList>
 </template>
 
 <script>
@@ -10,8 +12,9 @@ import ProductList from "@/components/ProductList";
 import EventBus from "@/event-bus";
 
 export default {
-  name: "ProductsPage",
+  name: "NewProductPage",
   components: {ProductList},
+  props: ["greenButton", "redButton", "blueButton"],
   mounted() {
     this.getProducts()
   },

@@ -1,15 +1,26 @@
 <template>
-  <ProductList :products="this.shoppingItems">
-  </ProductList>
+  <NewProductList
+      :products="this.shoppingItems"
+      :red-button="redButton"
+  >
+  </NewProductList>
 </template>
 
 <script>
-import ProductList from "@/components/ProductList";
+import NewProductList from "@/components/ProductList";
 
 export default {
   name: "CartPage",
-  components: {ProductList},
-  inject: ["shoppingItems"]
+  components: {NewProductList},
+  inject: ["shoppingItems"],
+  data() {
+    return {
+      redButton: {
+        text: "Remove from cart",
+        event: "remove-from-cart"
+      }
+    }
+  }
 }
 </script>
 

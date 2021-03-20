@@ -1,7 +1,11 @@
 <template>
   <v-expansion-panels>
     <v-expansion-panel v-for="product in this.products" :key="product.name">
-      <Product :product="product"></Product>
+      <NewProduct
+          :blue-button="blueButton"
+          :red-button="redButton"
+          :green-button="greenButton"
+          :product="product"></NewProduct>
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
@@ -9,12 +13,13 @@
 <script>
 
 import Product from "@/components/Product";
+import NewProduct from "@/components/Product";
 
 export default {
-  name: "ProductList",
-  components: {Product},
+  name: "NewProductList",
+  components: {NewProduct, Product},
   inject: ["currency"],
-  props: ["products"],
+  props: ["products", "greenButton", "redButton", "blueButton"],
 }
 </script>
 
