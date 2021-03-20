@@ -1,12 +1,7 @@
 <template>
   <div>
-    <ProductList :products="this.products" v-on:added-to-basket="showAlert()"></ProductList>
+    <ProductList :products="this.products" v-on:item-to-shopping-cart="showAlert()"></ProductList>
     <br><br>
-    <v-slide-x-transition>
-      <v-alert v-show="alertVisible" color="#4BCA81" type="success">
-        <span style="color: white">Item added to basket.</span>
-      </v-alert>
-    </v-slide-x-transition>
   </div>
 </template>
 
@@ -35,12 +30,6 @@ export default {
     },
     emit(event, ...args) {
       EventBus.$emit(event, args)
-    },
-    showAlert() {
-      if (this.alertVisible === false) {
-        this.alertVisible = true
-        setTimeout(() => this.alertVisible = false, 1150)
-      }
     }
   }
 }

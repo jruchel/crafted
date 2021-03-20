@@ -12,6 +12,9 @@
           <v-tab @click="loadPage('/contact')">
             <span>Contact</span>
           </v-tab>
+          <v-tab @click="loadPage('/cart')">
+            <ShoppingCart></ShoppingCart>
+          </v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
@@ -19,8 +22,10 @@
 </template>
 <script>
 
+import ShoppingCart from "@/components/ShoppingCart";
 export default {
   name: "App",
+  components: {ShoppingCart},
   inject: ["router"],
   methods: {
     loadPage(name) {
