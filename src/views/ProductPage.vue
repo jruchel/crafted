@@ -1,10 +1,14 @@
 <template>
-  <ProductList
-      :red-button="redButton"
-      :blue-button="blueButton"
-      :green-button="greenButton"
-      :products="this.products">
-  </ProductList>
+  <div>
+    <div>
+    </div>
+    <ProductList style="display: inline-block"
+        :red-button="redButton"
+        :blue-button="blueButton"
+        :green-button="greenButton"
+        :products="this.products">
+    </ProductList>
+  </div>
 </template>
 
 <script>

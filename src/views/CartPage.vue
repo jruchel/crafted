@@ -1,9 +1,12 @@
 <template>
-  <NewProductList
-      :products="this.shoppingItems"
-      :red-button="redButton"
-  >
-  </NewProductList>
+  <div>
+    <NewProductList
+        v-if="this.shoppingItems.length > 0"
+        :products="this.shoppingItems"
+        :red-button="redButton">
+    </NewProductList>
+    <h1 v-if="this.shoppingItems.length < 1">Your cart is empty.</h1>
+  </div>
 </template>
 
 <script>
