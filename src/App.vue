@@ -15,6 +15,7 @@
 import Navigation from "@/components/Navigation";
 import EventBus from "@/event-bus";
 import axios from "axios";
+import ShoppingItem from "@/components/ShoppingItem";
 
 export default {
   name: 'App',
@@ -34,6 +35,7 @@ export default {
 
   },
   components: {
+    ShoppingItem,
     Navigation,
   },
   provide() {
