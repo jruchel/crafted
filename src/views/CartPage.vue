@@ -1,20 +1,20 @@
 <template>
   <div>
-    <NewProductList
+    <ProductList
         v-if="this.shoppingItems.length > 0"
         :products="this.shoppingItems"
         :red-button="redButton">
-    </NewProductList>
+    </ProductList>
     <h1 v-if="this.shoppingItems.length < 1">Your cart is empty.</h1>
   </div>
 </template>
 
 <script>
-import NewProductList from "@/components/ProductList";
+import ProductList from "@/components/ProductList";
 
 export default {
   name: "CartPage",
-  components: {NewProductList},
+  components: {ProductList},
   inject: ["shoppingItems"],
   data() {
     return {

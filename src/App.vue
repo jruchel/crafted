@@ -6,10 +6,8 @@
       <v-alert v-show="addAlertVisible" color="#4BCA81" type="success">
         <span style="color: white">Item added to basket.</span>
       </v-alert>
-      <v-alert v-show="showRemoveAlert" color="#4BCA81" type="success">
-        <span style="color: white">Item removed from basket.</span>
-      </v-alert>
     </v-slide-x-transition>
+    <div data-app></div>
   </div>
 </template>
 

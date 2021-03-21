@@ -3,9 +3,7 @@
     <v-app-bar dense color="#00897B" dark>
       <v-app-bar-title class="top-of-nav">Jack's and Martin's</v-app-bar-title>
       <v-spacer></v-spacer>
-      <v-btn class="top-of-nav" icon @click="loadPage('/cart')">
-        <ShoppingCart/>
-      </v-btn>
+      <CartDialog class="top-of-nav"/>
 
       <template v-slot:extension>
         <v-tabs>
@@ -26,10 +24,11 @@
 <script>
 
 import ShoppingCart from "@/components/ShoppingCart";
+import CartDialog from "@/components/CartDialog";
 
 export default {
   name: "App",
-  components: {ShoppingCart},
+  components: {CartDialog, ShoppingCart},
   inject: ["router"],
   methods: {
     loadPage(name) {
