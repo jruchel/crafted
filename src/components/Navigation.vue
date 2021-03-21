@@ -1,6 +1,12 @@
 <template>
   <div>
-    <v-app-bar dense color="#1d4647" dark>
+    <v-app-bar dense color="#00897B" dark>
+      <v-app-bar-title class="top-of-nav">Jack's and Martin's</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-btn class="top-of-nav" icon @click="loadPage('/cart')">
+        <ShoppingCart/>
+      </v-btn>
+
       <template v-slot:extension>
         <v-tabs>
           <v-tab @click="loadPage('/')">
@@ -12,9 +18,6 @@
           <v-tab @click="loadPage('/contact')">
             <span>Contact</span>
           </v-tab>
-          <v-tab @click="loadPage('/cart')">
-            <ShoppingCart></ShoppingCart>
-          </v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
@@ -23,6 +26,7 @@
 <script>
 
 import ShoppingCart from "@/components/ShoppingCart";
+
 export default {
   name: "App",
   components: {ShoppingCart},
@@ -40,4 +44,9 @@ a {
   text-decoration: none;
   color: whitesmoke;
 }
+
+.top-of-nav {
+  margin-top: 10px;
+}
+
 </style>
