@@ -5,6 +5,11 @@
     </v-expansion-panel-header>
     <v-expansion-panel-content>
       {{ product.description }}
+      <br><br>
+      Pairs well with: <br>
+      <div id="food-pairing" v-for="food in this.product.food_pairing">
+        <span>-{{food}}</span>
+      </div>
     </v-expansion-panel-content>
     <v-expansion-panel-content>
       <v-btn class="styled-button" v-if="typeof greenButton !== 'undefined'" depressed color="#81C784"
@@ -53,6 +58,10 @@ export default {
 </script>
 
 <style scoped>
+
+#food-pairing span {
+  margin-left: 1%
+}
 
 .beer-image {
   width: 5%;

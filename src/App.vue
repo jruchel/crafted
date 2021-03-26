@@ -30,7 +30,8 @@ export default {
         name: args.name,
         description: args.description,
         price: args.price,
-        tagline: args.tagline
+        tagline: args.tagline,
+        food_pairing: args.food_pairing,
       }
       this.addItemToCart(item)
       this.showAddAlert()
