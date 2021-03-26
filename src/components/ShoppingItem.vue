@@ -1,6 +1,6 @@
 <template>
     <v-card v-show="visible">
-      <v-card-title>{{ item.name }}
+      <v-card-title>{{ item.name }} - {{item.tagline}}
         <v-spacer></v-spacer>
         <v-btn color="#E53935" icon @click="deleteFromCart(item)">
           <v-icon large>
@@ -22,16 +22,15 @@ export default {
   inject: ["currency"],
   props: ["item", "timeout"],
   mounted() {
-    setTimeout(e => this.visible = true, this.timeout)
+    console.log(this.item)
   },
   data() {
     return {
-      visible: false
+      visible: true
     }
   },
   methods: {
     deleteFromCart(item) {
-
       EventBus.$emit('remove-from-cart', item)
     }
   }

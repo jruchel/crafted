@@ -25,7 +25,13 @@ export default {
       this.sendRequest(args[0], args[1])
     })
     EventBus.$on('add-to-cart', args => {
-      let item = {id: this.getAvailableCartId(), name: args.name, description: args.description, price: args.price}
+      let item = {
+        id: this.getAvailableCartId(),
+        name: args.name,
+        description: args.description,
+        price: args.price,
+        tagline: args.tagline
+      }
       this.addItemToCart(item)
       this.showAddAlert()
     })
@@ -113,6 +119,7 @@ h1 {
   src: local("VeganStyle"),
   url(./assets/fonts/VeganStyle.ttf) format("truetype");
 }
+
 @font-face {
   font-family: "LemonJelly";
   src: local("LemonJelly"),

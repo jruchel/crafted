@@ -3,10 +3,10 @@
     <div>
     </div>
     <ProductList style="display: inline-block"
-        :red-button="redButton"
-        :blue-button="blueButton"
-        :green-button="greenButton"
-        :products="this.products">
+                 :red-button="redButton"
+                 :blue-button="blueButton"
+                 :green-button="greenButton"
+                 :products="this.products">
     </ProductList>
   </div>
 </template>
@@ -31,9 +31,12 @@ export default {
   methods: {
     processResponse(response) {
       this.products = response
+      for (let i = 0; i < this.products.length; i++) {
+        this.products[i].price = (Math.floor((Math.random() + 0.2) * 1000) / 100)
+      }
     },
     getProducts() {
-      this.emit("send-http-request", "/products", this.processResponse)
+      this.emit("send-http-request", "/beers?page=1&per_page=80", this.processResponse)
     },
     emit(event, ...args) {
       EventBus.$emit(event, args)

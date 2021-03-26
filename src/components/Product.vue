@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-expansion-panel-header>
-      {{ product.name }}, {{ currency.sign }}{{ product.price }}
+      {{ product.name }} - {{ product.tagline }}, {{ currency.sign }}{{ product.price }}
     </v-expansion-panel-header>
     <v-expansion-panel-content>
       {{ product.description }}
@@ -42,6 +42,7 @@ export default {
       EventBus.$emit(this.blueButton.event, this.product)
     },
     greenButtonClicked() {
+      console.log(this.product)
       EventBus.$emit(this.greenButton.event, this.product)
     },
     redButtonClicked() {
@@ -52,6 +53,11 @@ export default {
 </script>
 
 <style scoped>
+
+.beer-image {
+  width: 5%;
+  height: 5%
+}
 
 .styled-button {
   margin-left: 5px;

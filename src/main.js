@@ -13,7 +13,7 @@ let provided = {
         sign: "$",
         name: "Dollars"
     },
-    appAddress: "http://localhost:5000",
+    appAddress: "https://api.punkapi.com/v2",
     router: router
 }
 
