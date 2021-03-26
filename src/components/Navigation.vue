@@ -10,7 +10,7 @@
             <span>Home</span>
           </v-tab>
           <v-tab @click="loadPage('/products')">
-            <span>Products</span>
+            <span>Beers</span>
           </v-tab>
           <v-tab @click="loadPage('/contact')">
             <span>Contact</span>

@@ -1,14 +1,14 @@
 <template>
   <div>
     <v-expansion-panel-header>
-      {{ product.name }} - {{ product.tagline }}, {{ currency.sign }}{{ product.price }}
+      {{ product.name }} - {{ product.tagline }}
     </v-expansion-panel-header>
     <v-expansion-panel-content>
       {{ product.description }}
       <br><br>
       Pairs well with: <br>
       <div id="food-pairing" v-for="food in this.product.food_pairing">
-        <span>-{{food}}</span>
+        <span>-{{ food }}</span>
       </div>
     </v-expansion-panel-content>
     <v-expansion-panel-content>
@@ -18,6 +18,7 @@
           greenButton.text
         }}
       </v-btn>
+      <span style="margin-left: 1%">Price: ${{ product.price }}</span>
       <v-btn class="styled-button" v-if="typeof redButton !== 'undefined'" depressed color="#e53935"
              style="color: white"
              @click="redButtonClicked">{{
