@@ -7,7 +7,7 @@
       {{ product.description }}
     </v-expansion-panel-content>
     <v-expansion-panel-content>
-      <v-btn class="styled-button" v-if="typeof greenButton !== 'undefined'" depressed color="#4BCA81"
+      <v-btn class="styled-button" v-if="typeof greenButton !== 'undefined'" depressed color="#81C784"
              style="color: white"
              @click="greenButtonClicked">{{
           greenButton.text

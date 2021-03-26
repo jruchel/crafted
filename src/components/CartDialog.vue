@@ -13,7 +13,7 @@
             v-on="on"
         >
           <v-badge
-              color="#00C853"
+              color="#43A047"
               :content="getShoppingItemsLength()"
               :value="getShoppingItemsLength() > 0"
           >
@@ -34,15 +34,16 @@
         <div id="empty-cart" v-if="getShoppingItemsLength() === 0">
           <v-card-text>
             <h1 style="text-align: center">Your cart is empty.</h1>
+            <br>
           </v-card-text>
         </div>
         <div id="not-empty-cart" v-if="getShoppingItemsLength() > 0">
-          <v-card-text v-for="item in getShoppingItems()">
-            <ShoppingItem :item="item"></ShoppingItem>
-          </v-card-text>
+            <v-card-text v-for="item in getShoppingItems()" :key="item.id">
+                    <ShoppingItem :item="item" :timeout="getTimeoutValue(item.id)"></ShoppingItem>
+            </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="#4BCA81" dark>Checkout</v-btn>
+            <v-btn color="#43A047" dark>Checkout</v-btn>
           </v-card-actions>
         </div>
 
@@ -64,6 +65,12 @@ export default {
     }
   },
   methods: {
+    getTimeoutValue(id) {
+      if (id === 0) {
+        return 100
+      }
+      return id * 200
+    },
     getTotalCartPrice() {
       let sum = 0
       for (let i = 0; i < this.shoppingItems.length; i++) {
