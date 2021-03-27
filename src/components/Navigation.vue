@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-app-bar color="#6D4C41" dense dark fixed>
-      <v-app-bar-title style="font-size: 300%;">Crafted</v-app-bar-title>
+    <v-app-bar color="#6D4C41" dense dark fixed style="text-align: center">
+      <v-toolbar-title style="width: 100%; height: 100%; text-align: center"><h1>Crafted.</h1></v-toolbar-title>
       <v-spacer></v-spacer>
       <CartDialog class="top-of-nav"/>
       <template slot="extension">
