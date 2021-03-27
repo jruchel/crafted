@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar dense color="#6D4C41" dark>
+    <v-app-bar dense color="#6D4C41" dark fixed>
       <v-app-bar-title class="top-of-nav title">Jack's and Martin's</v-app-bar-title>
 
       <CartDialog class="top-of-nav"/>
@@ -47,6 +47,8 @@ a {
   margin-top: 15px;
 
 }
+
+
 
 .title {
   font-family: LemonJelly, serif;

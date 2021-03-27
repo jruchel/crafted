@@ -8,7 +8,6 @@
     <h1 v-if="this.shoppingItems.length < 1">Your cart is empty.</h1>
   </div>
 </template>
-
 <script>
 import ProductList from "@/components/ProductList";
 

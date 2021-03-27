@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation/>
+    <Navigation style="margin-bottom: 5%"/>
     <router-view></router-view>
     <br><br>
     <v-slide-x-transition>

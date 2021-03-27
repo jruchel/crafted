@@ -2,7 +2,7 @@
   <div>
     <div>
     </div>
-    <ProductList style="display: inline-block"
+    <ProductList
                  :red-button="redButton"
                  :blue-button="blueButton"
                  :green-button="greenButton"

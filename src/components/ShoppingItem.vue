@@ -1,5 +1,5 @@
 <template>
-  <v-card v-show="visible">
+  <v-card hover v-show="visible" width="100%" height="100%">
     <v-card-title>{{ item.name }}, {{ this.currency.sign }}{{ item.price }}
       <v-spacer></v-spacer>
       <v-btn color="#E53935" icon @click="deleteFromCart(item)">
@@ -10,7 +10,6 @@
     </v-card-title>
     <v-card-subtitle>{{ item.tagline }}</v-card-subtitle>
     <v-card-text>{{ item.description }}</v-card-text>
-    <v-spacer></v-spacer>
   </v-card>
 </template>
 
