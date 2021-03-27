@@ -104,11 +104,6 @@ export default {
   font-family: Nunito,serif;
 }
 
-body {
-  background-image: url(assets/logo_transparent.png);
-  background-size: 50%;
-  background-position: top center;
-}
 
 h1 {
   text-align: center;
