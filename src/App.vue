@@ -3,11 +3,6 @@
     <Navigation style="margin-bottom: 5%"/>
     <router-view></router-view>
     <br><br>
-    <v-slide-x-transition>
-      <v-alert v-show="addAlertVisible" color="#66BB6A" type="success">
-        <span style="color: white">Item added to basket.</span>
-      </v-alert>
-    </v-slide-x-transition>
     <div data-app></div>
   </div>
 </template>
@@ -127,7 +122,23 @@ h1 {
   url(./assets/fonts/LemonJelly.ttf) format("truetype");
 }
 
-.button {
-  font-size: 15px;
+::-webkit-scrollbar {
+  width: 15px;
 }
+
+::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border-left: 1px solid #dadada;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border: solid 3px #e6e6e6;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
 </style>

@@ -3,7 +3,7 @@
   <div class="text-center">
     <v-dialog
         v-model="dialog"
-        width="500"
+        width="50%"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -27,10 +27,11 @@
 
       </template>
       <v-card>
-        <v-card-title>Your cart:
-          <v-spacer></v-spacer>
-          <span>Cart total: {{ this.currency.sign }}{{ getTotalCartPrice() }}</span>
-        </v-card-title>
+          <v-toolbar color="#6D4C41" dark flat class="sticky-toolbar">
+            <span>Cart total: {{ this.currency.sign }}{{ getTotalCartPrice() }}</span>
+            <v-spacer></v-spacer>
+            <v-btn color="#43A047" dark>Checkout</v-btn>
+          </v-toolbar>
         <div id="empty-cart" v-if="getShoppingItemsLength() === 0">
           <v-card-text>
             <h1 style="text-align: center">Your cart is empty.</h1>
@@ -38,12 +39,12 @@
           </v-card-text>
         </div>
         <div id="not-empty-cart" v-if="getShoppingItemsLength() > 0">
-            <v-card-text v-for="item in getShoppingItems()" :key="item.id">
-                    <ShoppingItem :item="item" :timeout="getTimeoutValue(item.id)"></ShoppingItem>
-            </v-card-text>
+          <v-card-text v-for="item in getShoppingItems()" :key="item.id">
+            <ShoppingItem :item="item" :timeout="getTimeoutValue(item.id)"></ShoppingItem>
+          </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="#43A047" dark>Checkout</v-btn>
+
           </v-card-actions>
         </div>
 
@@ -76,7 +77,7 @@ export default {
       for (let i = 0; i < this.shoppingItems.length; i++) {
         sum += this.shoppingItems[i].price
       }
-      return sum
+      return Math.round(sum * 100) / 100
     },
     getShoppingItems() {
       return this.shoppingItems
@@ -89,5 +90,11 @@ export default {
 </script>
 
 <style scoped>
+
+.sticky-toolbar {
+ position: sticky;
+  top: 0;
+  z-index: 999;
+}
 
 </style>
