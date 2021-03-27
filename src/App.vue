@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation style="margin-bottom: 5%"/>
+    <Navigation/>
     <router-view></router-view>
     <br><br>
     <div data-app></div>
@@ -100,6 +100,10 @@ export default {
 </script>
 <style>
 
+* {
+  font-family: Nunito,serif;
+}
+
 body {
   background-image: url(assets/logo_transparent.png);
   background-size: 50%;
@@ -120,6 +124,12 @@ h1 {
   font-family: "LemonJelly";
   src: local("LemonJelly"),
   url(./assets/fonts/LemonJelly.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+  url(./assets/fonts/nunito/Nunito-Black.ttf) format("truetype");
 }
 
 ::-webkit-scrollbar {

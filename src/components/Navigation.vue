@@ -1,10 +1,10 @@
 <template>
   <div>
-    <v-app-bar dense color="#6D4C41" dark fixed>
-      <v-app-bar-title class="top-of-nav title">Jack's and Martin's</v-app-bar-title>
-
+    <v-app-bar color="#6D4C41" dense dark fixed>
+        <v-app-bar-title style="font-size: 300%;">Crafted</v-app-bar-title>
+        <v-spacer></v-spacer>
       <CartDialog class="top-of-nav"/>
-      <template v-slot:extension>
+      <template slot="extension">
         <v-tabs>
           <v-tab @click="loadPage('/')">
             <span>Home</span>
@@ -45,15 +45,8 @@ a {
 
 .top-of-nav {
   margin-top: 15px;
+  text-align: center;
 
-}
-
-
-
-.title {
-  font-family: LemonJelly, serif;
-  font-size: 200%;
-  width: 100%;
 }
 
 </style>
