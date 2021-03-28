@@ -2,8 +2,8 @@
   <v-container class="wide-container">
     <v-row align="center">
       <v-col cols="12" sm="12" md="6" lg="4" v-for="product in this.products" :key="product.name">
-          <NewProduct :product="product" :green-button="greenButton" :red-button="redButton" :blue-button="blueButton">
-          </NewProduct>
+        <ProductDialog :product="product" :blue-button="blueButton" :red-button="redButton"
+                       :green-button="greenButton"></ProductDialog>
       </v-col>
     </v-row>
   </v-container>
@@ -12,12 +12,12 @@
 <script>
 
 import Product from "@/components/Product";
-import NewProduct from "@/components/Product";
 import ShoppingItem from "@/components/ShoppingItem";
+import ProductDialog from "@/components/ProductDialog";
 
 export default {
   name: "NewProductList",
-  components: {ShoppingItem, NewProduct, Product},
+  components: {ProductDialog, ShoppingItem, Product},
   inject: ["currency"],
   props: ["products", "greenButton", "redButton", "blueButton"],
 }

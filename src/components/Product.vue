@@ -3,7 +3,7 @@
     <v-lazy transition="fade-transition" :v-model="visible" height="100%" width="100%" :options="{
           threshold: .5
         }">
-      <v-card hover width="100%" height="100%" class="card-outter">
+      <v-card hover width="100%" height="100%" class="card-outter" @click="cardClicked">
         <v-card-title>
           {{ product.name }}
           <v-spacer>
@@ -71,19 +71,31 @@ export default {
   data() {
     return {
       visible: false,
-      active: false
+      active: false,
+      buttonClicked: false
     }
   },
   methods: {
+    cardClicked() {
+      if (this.buttonClicked === false) {
+        this.$emit('click')
+      }
+      else {
+        this.buttonClicked = false
+      }
+    },
     blueButtonClicked() {
+      this.buttonClicked = true
       EventBus.$emit(this.blueButton.event, this.product)
     },
     greenButtonClicked() {
+      this.buttonClicked = true
       this.active = true
       setTimeout(e => this.active = false, 1000)
       EventBus.$emit(this.greenButton.event, this.product)
     },
     redButtonClicked() {
+      this.buttonClicked = true
       EventBus.$emit(this.redButton.event, this.product)
     }
   }

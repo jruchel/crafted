@@ -101,7 +101,7 @@ export default {
 <style>
 
 * {
-  font-family: Nunito,serif;
+  font-family: Nunito, serif;
 }
 
 
