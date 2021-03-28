@@ -46,8 +46,8 @@
           <v-slide-x-transition>
             <div class="icon cart" style="margin-left: 10px" v-show="active">
 
-              <svg id="cart" enable-background="new 0 0 511.728 511.728" height="12%" viewBox="0 0 511.728 511.728"
-                   width="12%"
+              <svg id="cart" enable-background="new 0 0 511.728 511.728" height="40px" viewBox="0 0 511.728 511.728"
+                   width="40px"
                    xmlns="http://www.w3.org/2000/svg"
               >
                 <path :class="{active}"
@@ -135,7 +135,7 @@ export default {
 }
 
 .icon.cart svg {
-  fill: green
+  fill: #43A047
 }
 
 @keyframes animate-cart {
