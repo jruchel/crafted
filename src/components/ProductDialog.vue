@@ -47,7 +47,6 @@
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
-          <v-spacer></v-spacer>
           Alcohol by volume: {{ product.abv }}%,
           Bitterness: {{ product.ibu }} IBU
         </v-card-actions>
