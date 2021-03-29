@@ -28,7 +28,7 @@
                  style="color: white"
                  @click="greenButtonClicked">{{
               greenButton.text
-            }}
+            }} {{currency.sign}}{{ product.price }}
           </v-btn>
           <v-btn class="styled-button" v-if="typeof redButton !== 'undefined'" depressed color="#e53935"
                  style="color: white"
@@ -79,8 +79,7 @@ export default {
     cardClicked() {
       if (this.buttonClicked === false) {
         this.$emit('click')
-      }
-      else {
+      } else {
         this.buttonClicked = false
       }
     },

@@ -5,12 +5,12 @@
     <v-dialog v-model="dialog" :width="width">
       <v-card>
         <v-toolbar color="white" dark flat class="sticky-toolbar">
-          <v-toolbar-title>{{ product.name }} - {{ product.tagline }}</v-toolbar-title>
+          <v-toolbar-title>{{ product.name }}</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-spacer></v-spacer>
           <v-slide-x-reverse-transition>
-            <div class="icon cart" style="text-align: right" v-show="active">
-              <svg id="cart" enable-background="new 0 0 511.728 511.728" height="40px" viewBox="0 0 511.728 511.728"
+            <div class="icon cart" style="text-align: center" v-show="active">
+              <svg id="cart" enable-background="new 0 0 511.728 511.728" viewBox="0 0 511.728 511.728"
                    width="40px"
                    xmlns="http://www.w3.org/2000/svg"
               >
@@ -19,13 +19,17 @@
               </svg>
             </div>
           </v-slide-x-reverse-transition>
-          <v-btn color="#43A047" dark @click="addProductToCart">Add to cart</v-btn>
+          <v-btn color="#43A047" dark @click="addProductToCart">Add to cart {{ currency.sign }}{{
+              product.price
+            }}
+          </v-btn>
         </v-toolbar>
         <v-divider></v-divider>
         <v-card-text>
           <v-container>
             <v-row>
-              <v-col>
+              <v-col cols="8">
+                <h3 style="color: #000000">{{ product.name }} - {{ product.tagline }}</h3><br>
                 {{ product.description }}
                 <br><br>
                 Pairs well with: <br>
@@ -34,14 +38,19 @@
                 </div>
               </v-col>
               <v-divider vertical></v-divider>
-              <v-col>
-                <div class="styled-dialog">
-                  <v-img max-width="200" :src="product.image_url"></v-img>
-                </div>
+              <v-col cols="4" sm="4" md="4">
+                <v-img max-width="175px" :src="product.image_url"></v-img>
               </v-col>
             </v-row>
+
           </v-container>
         </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          Alcohol by volume: {{ product.abv }}%,
+          Bitterness: {{ product.ibu }} IBU
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </div>
@@ -54,6 +63,7 @@ import EventBus from "@/event-bus";
 export default {
   name: "ProductDialog",
   components: {Product},
+  inject: ["currency"],
   props: ["product", "greenButton", "redButton", "blueButton"],
   mounted() {
     this.onResize()
