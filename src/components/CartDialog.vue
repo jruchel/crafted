@@ -22,7 +22,7 @@
           </v-card-text>
         </div>
         <div id="not-empty-cart" v-if="getShoppingItemsLength() > 0">
-          <v-card-text v-for="item in getShoppingItems()">
+          <v-card-text v-for="item in getShoppingItems()" :key="item.id">
             <ShoppingItem :item="item"></ShoppingItem>
           </v-card-text>
         </div>

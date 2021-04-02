@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <v-img width="100%" height="100%" src="@/assets/logos/logo.png"></v-img>
+    <h1>Home</h1>
   </div>
 </template>
 
