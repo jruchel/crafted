@@ -98,10 +98,16 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss">
+
+@mixin setFont($font-name) {
+  font-family: $font-name;
+  src: local($font-name),
+  url(./assets/fonts/#{$font-name}.ttf) format("truetype");
+}
 
 * {
-  font-family: Nunito, serif;
+  font-family: Nunito-Black, serif;
 }
 
 
@@ -110,21 +116,15 @@ h1 {
 }
 
 @font-face {
-  font-family: "VeganStyle";
-  src: local("VeganStyle"),
-  url(./assets/fonts/VeganStyle.ttf) format("truetype");
+  @include setFont("VeganStyle")
 }
 
 @font-face {
-  font-family: "LemonJelly";
-  src: local("LemonJelly"),
-  url(./assets/fonts/LemonJelly.ttf) format("truetype");
+  @include setFont("LemonJelly")
 }
 
 @font-face {
-  font-family: "Nunito";
-  src: local("Nunito"),
-  url(./assets/fonts/nunito/Nunito-Black.ttf) format("truetype");
+  @include setFont("Nunito-Black")
 }
 
 ::-webkit-scrollbar {
