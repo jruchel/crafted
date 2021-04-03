@@ -1,4 +1,4 @@
-# grocery-store
+# crafted
 
 ## Project setup
 ```
